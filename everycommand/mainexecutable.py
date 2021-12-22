@@ -363,17 +363,22 @@ def bonusSetup():
 #______________________________________Support______________________________________________________    
 ########################################Support#####################################################
 clicked = False
+About = ""
 
-def reinstall(Root):
-    if clicked = True
+def reinstall():
+    global clicked
+    global About
+    if clicked == True:
         browser
     clicked = True
-    Root.configure(text="you need to reinstall\nmy programm?", command=reinstallProgramm)
+    About.configure(text="you need to reinstall\nmy programm?", command=reinstallProgramm)
 
 def reinstallProgramm():
+    webbrowser.open_new("https://github.com/pascal-gerber/Library/archive/refs/heads/main.zip")
     
 
 def Supportpage():
+    global About
     Support = Tk()
 
     supportHelp = """in case you need help, there are multiples support platforms
@@ -394,8 +399,8 @@ Good Luck to you """ + str(getpass.getuser())
     FourthSupport = Button(Support, text="Python Discuss", command=lambda openLink = openLink:openLink("https://discuss.python.org/top?period=monthly"),
                          height=10, width=15, bg="Lime")
     FourthSupport.grid(row=3, column=3)
-    About = Button(Support, text="Programm issue", command=lambda Support = Support:reinstall(Support)),
-                         height=10, width=15, bg="Lime")
+    About = Button(Support, text="Programm issue", command=reinstall,
+                   height=10, width=15, bg="Lime")
     About.grid(row=3, column=4)
    
 
