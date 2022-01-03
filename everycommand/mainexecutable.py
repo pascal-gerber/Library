@@ -22,7 +22,7 @@ mediumstages = ["classes.py", "StringManipulation.py", "open.py", "CSV.py", "Dic
 hardstages = ["Encapsulation.py", "Inheritance.py", "init.py", "Compare.py"]
 
 modulestages = ["Modules.py","Timemodule.py", "Turtle.py",  "osmodule.py", "Tkinter part1.py", "Tkinter part2.py",
-                "Tkinter part3.py", "Tkinter part4.py", "Sys.py", "Auto-py-to-exe.py"]
+                "Tkinter part3.py", "Tkinter part4.py", "Sys.py", "Auto-py-to-exe.py", "Specific download.py"]
 
 projectstages = ["turtlestar.py", "goatgame.py", "Clock.py", "toDoList.py"]
 
@@ -40,7 +40,7 @@ mediumtitles = ["Classes", "String manipulation", "Edit files", "CSV Files\nExce
 hardtitles = ["Encapsulation\nPrivate class", "Inheritance", "__init__\nFunction", "Compare Objects"]
 
 moduletitles = ["Download\nModules","Time Module", "Basic Turtle", "OS Module", "Gui Part 1", "Gui Part 2",
-                "Gui Part 3", "Gui Part 4", "System - Sys", "EXE File Conversion"]
+                "Gui Part 3", "Gui Part 4", "System - Sys", "EXE File Conversion", "Not working\nmodules"]
 
 projecttitles = ["Turtle Star", "Goat Game", "Clock To 2030", "To Do List"]
 
@@ -276,6 +276,7 @@ def easySetup():
     easytext = Label(window, text="Basic simple knowledge", height = 5, width=65, bg=easycol[0], font = titlefont)
     easytext.grid(row=1, column=0, columnspan=6)
     ObjList.append(easytext)
+    
     for easystages in range(len(titles)):
         easy = Button(window, text=titles[easystages], bg=easycol[1],
                       command=lambda number = number, easystages = easystages:number(easystages, "easy"),
@@ -296,6 +297,7 @@ def mediumSetup():
     mediumtext = Label(window, text="Basic Highter knowledge", height = 5, width=65, bg=mediumcol[0], font = titlefont)
     mediumtext.grid(row=1, column=0, columnspan=6)
     ObjList.append(mediumtext)
+    
     for mediumstages in range(len(titles)):
         medium = Button(window, text=titles[mediumstages], bg=mediumcol[1],
                       command=lambda number = number, mediumstages = mediumstages:number(mediumstages, "medium"),
@@ -312,6 +314,7 @@ def hardSetup():
     hardtext = Label(window, text="Advanced knowledge", height = 5, width=65, bg=hardcol[0], font = titlefont)
     hardtext.grid(row=1, column=0, columnspan=6)
     ObjList.append(hardtext)
+    
     for hardstages in range(len(titles)):
         hard = Button(window, text=titles[hardstages], bg=hardcol[1],
                       command=lambda number = number, hardstages = hardstages:number(hardstages, "hard"),
@@ -324,9 +327,11 @@ def hardSetup():
 def moduleSetup():
     window.configure(bg=modulecol[0])
     titles = moduletitles
+    
     regexButton = Button(window, text="Regex", command = regexSetup, width = 30, height = 5, bg="grey")
     regexButton.grid(row = 0, column = 1, columnspan = 2)
     ObjList.append(regexButton)
+    
     moduletext = Label(window, text="Modules", height = 5, width=65, bg=modulecol[0], font = titlefont)
     moduletext.grid(row=1, column=0, columnspan=6)
     ObjList.append(moduletext)
@@ -342,7 +347,11 @@ def moduleSetup():
 def projectSetup():
     window.configure(bg=projectcol[0])
     titles = projecttitles
-
+    
+    DataButton = Button(window, text="Data Based Projects", command = dataBasedFilePage, width = 30, height = 5, bg="grey")
+    DataButton.grid(row = 0, column = 1, columnspan = 2)
+    ObjList.append(DataButton)
+    
     projecttext = Label(window, text="Projects", height = 5, width=65, bg=projectcol[0], font = titlefont)
     projecttext.grid(row=1, column=0, columnspan=6)
     ObjList.append(projecttext)
@@ -441,8 +450,42 @@ For  variables, classes and functions it is best to use camelCase."""
     capitalTutorial.title("Capitalisations")
     capitalTutorial.mainloop()
 
+#______________________________________Databased______________________________________________________    
+########################################Databased#####################################################
 
-        
+def openPath(place):
+    if place == "readMe":
+        desiredPath = (str(pathlib.Path(__file__).parent.resolve()) + "\\File-projects\\readme.txt")
+    elif place == "transparent":
+        desiredPath = (str(pathlib.Path(__file__).parent.resolve()) + "\\File-projects\\IMG to Transparent\\Input")
+
+    subprocess.Popen(r'explorer /select,' + desiredPath)
+
+def dataBasedFilePage():
+    showData = Tk()
+
+    UserKnowledge = """this place contains whole programs that can be used/edited by you.
+there will be mostly file based programms that need a specific file/save outside of the code."""
+    Information = Label(showData, text=UserKnowledge, bg="DarkOrchid")
+    Information.grid(row=2, column=1, columnspan=4)
+    
+    readMeButton = Button(showData, text="Read Me", command=lambda :openPath("readMe"),
+                         height=10, width=15, bg="Purple")
+    readMeButton.grid(row=3, column=0)
+    
+
+    transparentImages = Button(showData, text="Image\nTransparent", command=lambda :openPath("transparent"),
+                         height=10, width=15, bg="Purple")
+    transparentImages.grid(row=3, column=1)
+
+    showData.configure(bg="DarkOrchid")
+    showData.title("File Projects")
+    if sys.platform == "win32" or sys.platform == "win64":
+        showData.geometry("600x500")
+    elif sys.platform == "linux":
+        showData.geometry("2000x1000")    
+    showData.mainloop()
+
 #______________________________________Support______________________________________________________    
 ########################################Support#####################################################
 clicked = False
