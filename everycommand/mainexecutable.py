@@ -17,34 +17,34 @@ easystages = ["Print.py", "variables1.py", "variables2.py", "variables3.py", "Va
                      "String options.py", "Math module and calculations.py", "indexes.py"
                      ]
 
-mediumstages = ["classes.py", "open.py", "String Manipulation.py"]
+mediumstages = ["classes.py", "StringManipulation.py", "open.py", "CSV.py", "Dictionnaries.py"]
 
-hardstages = ["Encapsulation.py", "CSV.py", "Dictionnaries.py"]
+hardstages = ["Encapsulation.py", "Inheritance.py", "init.py", "Compare.py"]
 
 modulestages = ["Modules.py","Timemodule.py", "Turtle.py",  "osmodule.py", "Tkinter part1.py", "Tkinter part2.py",
-                "Tkinter part3.py", "Tkinter part4.py", "Sys.py"]
+                "Tkinter part3.py", "Tkinter part4.py", "Sys.py", "Auto-py-to-exe.py"]
 
-projectstages = ["turtlestar.py", "goatgame.py", "Clock.py"]
+projectstages = ["turtlestar.py", "goatgame.py", "Clock.py", "toDoList.py"]
 
-bonusstages = ["Lists.py", "Editing files.py"]
+bonusstages = ["Lists.py", "Editing files.py", "Folder informations.py"]
 
 ################################################################################################################
 #same reason here why its on the top
 #but these are the visual titles on the pages
-easytitles = ["print explaination", "Variables part 1", "Variables part 2", "conversion of\nvariables", "string and lists",
-              "List sorting", "input", "if function", "python loops", "Functions", 
-              "string options", "Mathematical\noperations","List Indexes"]
+easytitles = ["Print Explaination", "Datatypes", "Grouped Data", "Conversion of\nvariables", "string and lists",
+              "List Sorting", "Input", "If Function", "Python Loops", "Functions", 
+              "String Options", "Mathematical\nOperations","List Indexes"]
 
-mediumtitles = ["classes", "edit files", "string manipulation"]
+mediumtitles = ["Classes", "String manipulation", "Edit files", "CSV Files\nExcel", "Dictionnaries"]
 
-hardtitles = ["Encapsulation\nprivate class", "CSV files\nExcel", "Dictionnaries"]
+hardtitles = ["Encapsulation\nPrivate class", "Inheritance", "__init__\nFunction", "Compare Objects"]
 
-moduletitles = ["download\nmodules","time module", "basic Turtle", "os module", "Gui part 1", "Gui part 2",
-                "Gui part 3", "Gui part 4", "system - sys"]
+moduletitles = ["Download\nModules","Time Module", "Basic Turtle", "OS Module", "Gui Part 1", "Gui Part 2",
+                "Gui Part 3", "Gui Part 4", "System - Sys", "EXE File Conversion"]
 
-projecttitles = ["Turtle star", "Goat game", "Clock to 2030"]
+projecttitles = ["Turtle Star", "Goat Game", "Clock To 2030", "To Do List"]
 
-bonustitles = ["Lists", "File manipulation"]
+bonustitles = ["Lists", "File Manipulation", "Folder Research"]
 ################################################################################################################
 
 #these are the colors of each section
@@ -155,6 +155,8 @@ def buildpath(filename, difficulty):
     elif sys.platform == "linux":
         droppedFile = pathlib.Path(__file__).parent.resolve()
         lines = "/"
+    if droppedFile[-12:] != "everycommand":
+        droppedFile += "\\everycommand"
     if difficulty == "easy":
         pathtofiles += "easy" + lines + filename
     elif difficulty == "medium":
@@ -266,6 +268,10 @@ def easySetup():
 
     window.configure(bg=easycol[0])
     titles = easytitles
+
+    Cases = Button(window, text="Correct Capitalising", command = capitalSetup, width = 30, height = 5, bg="grey")
+    Cases.grid(row = 0, column = 1, columnspan = 2)
+    ObjList.append(Cases)
     
     easytext = Label(window, text="Basic simple knowledge", height = 5, width=65, bg=easycol[0], font = titlefont)
     easytext.grid(row=1, column=0, columnspan=6)
@@ -282,6 +288,10 @@ def easySetup():
 def mediumSetup():
     window.configure(bg=mediumcol[0])
     titles = mediumtitles
+
+    showProcess = Button(window, text="OOP and Procedural", command=createShowWindow, width = 30, height = 5, bg="grey")
+    showProcess.grid(row=1, column=0, columnspan=6)
+    ObjList.append(showProcess)
 
     mediumtext = Label(window, text="Basic Highter knowledge", height = 5, width=65, bg=mediumcol[0], font = titlefont)
     mediumtext.grid(row=1, column=0, columnspan=6)
@@ -360,6 +370,79 @@ def bonusSetup():
                       height = 5, width = 15)
         bonus.grid(row = (int(bonusstages//4)) + 2, column = bonusstages - (bonusstages//4)*4)
         ObjList.append(bonus)
+
+#______________________________________Capitalisation______________________________________________________    
+########################################Capitalisation#####################################################
+
+def capitalSetup():
+    capitalTutorial = Tk()
+
+    titles = ("Bahnschrift", 11)
+    winColor = "DeepSkyBlue"
+
+    readMeText = """In python theres a specific way to write Variables, objects and functions.
+There are 4 different capitalisations generally in programming which the most used is camelCase.
+For  variables, classes and functions it is best to use camelCase."""
+
+    Information = Label(capitalTutorial, text=readMeText,  bg=winColor)
+    Information.grid(row=0, column=0,  columnspan=2)
+
+    camelText = "camelCase is written like this :\"resultNumber, clickMeButton,  deleteContent and so on\"\nThe first word is always lowecased but every other word is uppercase\nall the words are connected"
+
+    camelTitle = Label(capitalTutorial, text="CamelCase", font=titles,  bg=winColor)
+    camelTitle.grid(row=1, column = 0)
+
+    rarityCamel = Label(capitalTutorial, text="Most Common", bg="Goldenrod", height = 3,  width = 15)
+    rarityCamel.grid(row=2, column = 0)
+    
+    camelCase = Label(capitalTutorial, text=camelText,  bg=winColor)
+    camelCase.grid(row=3, column = 0)
+
+    PascalTitle = Label(capitalTutorial, text="PascalCase", font=titles,  bg=winColor)
+    PascalTitle.grid(row=4, column = 0)
+
+    PascalText = "PascalCase is written like this :\"ResultNumber, ClickMeButton,  DeleteContent and so on\"\nEvery word is capital and connected, simple."
+
+    rarityPascal = Label(capitalTutorial, text="Very common", bg="Turquoise", height = 3,  width = 15)
+    rarityPascal.grid(row=5, column = 0)
+    
+    PascalCase = Label(capitalTutorial, text=PascalText,  bg=winColor)
+    PascalCase.grid(row=6, column = 0)
+    
+
+    snake_Title = Label(capitalTutorial, text="snake_Case", font=titles,  bg=winColor)
+    snake_Title.grid(row=7, column = 0)
+
+    snake_Text = "snake_Case is written like this :\"result_number, click_me_button,  delete_content and so on\"\nno word is capital and everything is connected trought an  underscore \"_\""
+
+    raritysnake_ = Label(capitalTutorial, text="somewhat used", bg="Bisque", height = 3,  width = 15)
+    raritysnake_.grid(row=8, column = 0)
+    
+    snake_Case = Label(capitalTutorial, text=snake_Text,  bg=winColor)
+    snake_Case.grid(row=9, column = 0)
+
+    kebabTitle  = Label(capitalTutorial, text="kebab-Case", font=titles,  bg=winColor)
+    kebabTitle .grid(row=10, column = 0)
+
+    kebabText = "Kebab works almost the same as snake_case but the only difference is that the \"_\"  is an \"-\""
+
+    raritykebab = Label(capitalTutorial, text="Almost never used", bg="White", height = 3,  width = 15)
+    raritykebab.grid(row=11, column = 0)
+    
+    kebabCase = Label(capitalTutorial, text=kebabText,  bg=winColor)
+    kebabCase.grid(row=12, column = 0)
+
+    capitalTutorial.configure(bg=winColor)
+    
+    if sys.platform == "win32" or sys.platform == "win64":
+        capitalTutorial.geometry("600x500")
+    elif sys.platform == "linux":
+        capitalTutorial.geometry("2000x1000")
+    capitalTutorial.title("Capitalisations")
+    capitalTutorial.mainloop()
+
+
+        
 #______________________________________Support______________________________________________________    
 ########################################Support#####################################################
 clicked = False
@@ -412,6 +495,19 @@ Good Luck to you """ + str(getpass.getuser())
     Support.title("Support communities")
     Support.configure(bg="LimeGreen")
     Support.mainloop()
+
+#_________________________________OOP and Procedural______________________________________________________
+##########################################################################################################
+
+def createShowWindow():
+    Process = Tk()
+
+    Information = """"""
+    
+    Process.title("OOP and Procedural")
+    Process.geometry("500x500")
+    Process.mainloop()
+
     
 #_________________________________Tutorial for regex______________________________________________________
 ##########################################################################################################

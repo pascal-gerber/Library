@@ -6,4 +6,12 @@ for starting mainexecutable, you do not need any newly installed Modules
 
 Note: it also works for pydroid on android.
 
+Everything is available from the github the link is:
+https://github.com/pascal-gerber/Library/archive/refs/heads/main.zip
+
+or the file is at:
+https://github.com/pascal-gerber/Library
+
+have fun :D
+
 everything was made by : Pascal

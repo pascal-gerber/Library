@@ -68,7 +68,7 @@ fset = frozenset(["text", 20, 3.3, True, 20, 3.3, "i am a frozenset"])
 
 print(fset)
 
-#usually set and frozenset arnt used a lot.
+#usually set and frozenset aren't used a lot.
 
 
 

@@ -37,13 +37,13 @@ class hotel():
     pass
 
 def nameNRoom(number):
-    return(number.Roomnumber + " : " + number.name)
+    return(number.roomNumber + " : " + number.name)
                                                 # /\
 #now we make a object ID containing a name as there
 ID12 = hotel()
 ID12.name = "Fred baumann"
     #/\ name
-ID12.Roomnumber = "001"
+ID12.roomNumber = "001"
 
 #this will print both values in the ID12
 #of course you can add new and more ID's/objects to the class.

@@ -12,9 +12,9 @@ print("\n") #skip line
 
 #theres another loop that works differently and simplifies for some specific purposes
 #range is a special command that will be explained in another file
-#this will play the loop 10 times but the loopamount will have the number inside
-for loopamount in range(10):
-    print("loop :" + str(loopamount) + " in for")
+#this will play the loop 10 times but the loopAmount will have the number inside
+for loopAmount in range(10):
+    print("loop :" + str(loopAmount) + " in for")
 
 #in python there are specific commands for loops that works for both loop types
 #for example continue and break

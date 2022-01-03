@@ -16,22 +16,22 @@ print(anotherLines, "nextline")
 #like putting betwem every letter or list object
 #a certain letter/character in.
 
-spaceme = "hello world"
+spaceMe = "hello world"
 
 #join simply puts a certain character of your choice
 #betwem each object/letter
-spacedme = "-".join(spaceme)
+spacedme = "-".join(spaceMe)
           #/\ this can also be a variable 
 
 print(spacedme)
 
-SpacemeList = ["i", "eat", "an", "apple"]
+spaceMeList = ["i", "eat", "an", "apple"]
 
 #of course it works for lists too, but it transforms
 #the list into a string
-spacedlist = " - ".join(SpacemeList)
+spacedList = " - ".join(spaceMeList)
 
-print(spacedlist)
+print(spacedList)
 
 
 

@@ -62,6 +62,8 @@ print(1 != 2, "<= not the same '!='")
 ############################################
 
 #is works like ==, its a python word
+#IMPORTANT NOTE: it isn't the same with ==
+#will be explained later
 print(1 is 1, "we used the is to make a True 'works like =='")
 
 #we can also use other words like "and" and "or"
