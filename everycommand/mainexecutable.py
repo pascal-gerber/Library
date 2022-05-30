@@ -155,7 +155,7 @@ def buildpath(filename, difficulty):
     elif sys.platform == "linux":
         droppedFile = pathlib.Path(__file__).parent.resolve()
         lines = "/"
-    if droppedFile[-12:] != "everycommand":
+    if droppedFile[:-12] != "everycommand":
         droppedFile += "\\everycommand"
     if difficulty == "easy":
         pathtofiles += "easy" + lines + filename
