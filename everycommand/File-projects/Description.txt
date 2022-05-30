@@ -1,0 +1,1 @@
+There is currently only one file in this folder, the use of it is for removing certain pigmentations from images making them transparent.
