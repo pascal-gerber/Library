@@ -673,6 +673,7 @@ def difficultyswitch():
                             command=lambda difficulties = difficulties:switch(difficulties[5]), width = 15, height = 5,
                             bg = Diffcolors[5][0])
     DifficultyDown.grid(row = 0, column = 0)
+    
 #_________________________________button changer___________________________________________________________
 ###########################################################################################################
 

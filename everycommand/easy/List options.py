@@ -18,7 +18,10 @@ unsortedlist = [53, 1, 432, 52, 21, 12, 14.23, 53.23]
 #this is a list of numbers ready to be sorted
 
 unsortedlist.sort()
-#sorts the list
+#sorts the list itself
+#another methode to sort lists is
+unsortedlist = sorted(unsortedlist)
+                #/\ helps you sort in the middle of a process.
 
 print(unsortedlist)
 

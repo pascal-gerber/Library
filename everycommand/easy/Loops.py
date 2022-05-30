@@ -27,7 +27,7 @@ for i in range(20):
     if i == 5:
         #skips one loop
         continue
-    print("loop : " + str(i))
+    print("loop : " + str(i) + " in forever loop")
     if i == 10:
         #stops entirely the loop
         break

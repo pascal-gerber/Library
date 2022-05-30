@@ -26,3 +26,23 @@ newListVariable = bigString.split(",")
 
 #the type is a List afterwarts
 print(type(newListVariable))
+
+###############################################################################
+#of course a string can also be transformed into a list trought different ways
+
+multipleOutcomes = "this is a test"
+
+#if you want to cut a string in words, you can split it in the spacebars.
+
+firstOutcome = multipleOutcomes.split(" ")
+                                     # /\ spacebar
+print(firstOutcome, "split trought every space")
+
+#you can also cut trought every single letter by simply transforming
+#it into a List object.
+
+secondOutcome = list(multipleOutcomes)
+
+print(secondOutcome, "\n/\\cut by every letter/\\")
+
+

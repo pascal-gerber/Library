@@ -44,3 +44,20 @@ def hi():
 print(hi())
 #works for any function
 
+
+#########################################################################################################
+#to give you an idea what def can be used for
+#let me make a simple example
+
+def calculate(a, b):
+    return(a + b)
+
+
+print(calculate(20, 40), "calculation")
+
+#Notice: the return function doesnt need specificly a parenthesis
+#my personnal preference is to always use parenthesis.
+
+
+
+

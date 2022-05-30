@@ -16,7 +16,7 @@ print(math.floor(Float), "rounded down")
 print(math.sqrt(9), ", square root")
 
 #Greatest common divisor
-print(math.gcd(50, 75), "gretest common divisor")
+print(math.gcd(50, 75), "greatest common divisor")
 
 ##########################################################################
 #No module required

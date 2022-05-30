@@ -13,11 +13,13 @@ print('hello world')
 
 #######################
 #IMPORTANT - F5       #
-#or going to Run      #
+#or clicking Run      #
 #and click Run Module #
 #will execute the code#
 #Note: smartphones do #
 #not have that        #
+#for smartphones you  #
+#can use Pydroid      #
 #######################
 
 #TIP: its on the top of the widget
