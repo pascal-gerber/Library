@@ -49,6 +49,29 @@ print(min(randomNumber), "smallest number")
 tasks = ["clean", "cook", "eat", "buy", "purchase drink"]
 
 print(max(tasks), "<= alphabetical order biggest")
-print(min(tasks), "<= alphabetical order smallest")
+print(min(tasks), "<= alphabetical order smallest\n")
+
+#you can delete objects from Lists in 2 different ways
+
+deleteMeList = ["first", "second", "thirth"]
+
+#one by index:
+del deleteMeList[2] #deletes "thirth"
+
+#one by name:
+deleteMeList.remove("second")
+
+print(deleteMeList, "deleted 2 objects from list")
+
+
+
+
+
+
+
+
+
+
+
 
 

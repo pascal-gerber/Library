@@ -15,8 +15,9 @@ def edit(mode, content = None):
 #write
 edit("w", "hello")
 
-#edit
+#append
 edit("a", " world")
 
 #read
 print(edit("r"), ", which is in the txt file")
+

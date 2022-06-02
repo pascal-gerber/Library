@@ -10,7 +10,8 @@ with open("list of peoples.csv", "w") as workers:
 4;Ryan;729;2014-05-11;HR
 5;Gary;843.25;2015-03-27;Finance
 6;Nina;578;2013-05-21;IT
-7;Simon;632.8;2013-07-30;Operations\n8;Guru;722.5;2014-06-17;Finance""")
+7;Simon;632.8;2013-07-30;Operations
+8;Guru;722.5;2014-06-17;Finance""")
     #either \n or going on the next line will go on the next line
     #the sign ; is for going one field to the right.
 

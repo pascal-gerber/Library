@@ -24,7 +24,7 @@ hardstages = ["Encapsulation.py", "Inheritance.py", "init.py", "Compare.py"]
 modulestages = ["Modules.py","Timemodule.py", "Turtle.py",  "osmodule.py", "Tkinter part1.py", "Tkinter part2.py",
                 "Tkinter part3.py", "Tkinter part4.py", "Sys.py", "Auto-py-to-exe.py", "Specific download.py", "Flask.py"]
 
-projectstages = ["turtlestar.py", "goatgame.py", "Clock.py", "toDoList.py"]
+projectstages = ["turtlestar.py", "goatgame.py", "Clock.py", "toDoList.py", "multitabbrowser.py"]
 
 bonusstages = ["Lists.py", "Editing files.py", "Folder informations.py"]
 
@@ -42,7 +42,7 @@ hardtitles = ["Encapsulation\nPrivate class", "Inheritance", "__init__\nFunction
 moduletitles = ["Download\nModules","Time Module", "Basic Turtle", "OS Module", "Gui Part 1", "Gui Part 2",
                 "Gui Part 3", "Gui Part 4", "System - Sys", "EXE File Conversion", "Not working\nmodules", "Flask\nfor Websites"]
 
-projecttitles = ["Turtle Star", "Goat Game", "Clock To 2030", "To Do List"]
+projecttitles = ["Turtle Star", "Goat Game", "Clock To 2030", "To Do List", "Multi Tab Browser"]
 
 bonustitles = ["Lists", "File Manipulation", "Folder Research"]
 ################################################################################################################
@@ -63,6 +63,24 @@ Diffcolors = [easycol, mediumcol, hardcol, modulecol, projectcol, bonuscol]
 difficulties = ["easy", "medium", "hard", "modules", "projects", "Bonus codes"]
 ObjList = []
 filename = ""
+
+#Txt File Reader
+def readFile(pathandname):
+    reader = Tk()
+
+    contentOfFile = open(pathandname, "r")
+    fileText = contentOfFile.read()
+    contentOfFile.close()
+
+    contentContainer = Text(reader)
+    contentContainer.insert('1.0', fileText)
+    contentContainer.grid()
+    
+    contentContainer.configure(state=DISABLED)
+    
+    reader.geometry("500x500")
+    reader.mainloop()
+    
 
 
 
@@ -458,11 +476,12 @@ For  variables, classes and functions it is best to use camelCase."""
 
 def openPath(place):
     if place == "readMe":
-        desiredPath = (str(pathlib.Path(__file__).parent.resolve()) + "\\File-projects\\readme.txt")
+        filePath = (str(pathlib.Path(__file__).parent.resolve()) + "\\File-projects\\IMG to Transparent\\Description.txt")
+        readFile(filePath)
     elif place == "transparent":
         desiredPath = (str(pathlib.Path(__file__).parent.resolve()) + "\\File-projects\\IMG to Transparent\\Input")
+        subprocess.Popen(r'explorer /select,' + desiredPath)
 
-    subprocess.Popen(r'explorer /select,' + desiredPath)
 
 def dataBasedFilePage():
     showData = Tk()
@@ -480,6 +499,8 @@ there will be mostly file based programms that need a specific file/save outside
     transparentImages = Button(showData, text="Image\nTransparent", command=lambda :openPath("transparent"),
                          height=10, width=15, bg="Purple")
     transparentImages.grid(row=3, column=1)
+
+    
 
     showData.configure(bg="DarkOrchid")
     showData.title("File Projects")

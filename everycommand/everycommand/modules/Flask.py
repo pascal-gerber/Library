@@ -35,7 +35,7 @@ def test():
 @app.route('/another')
 #the next function will be the next page made.
 def another():
-    return("another website")
+    return("<p>another website</p>")
 
 #i made a thread so it works in the back of the pc
 #otherwise it will not allow the code to do more than host this site.

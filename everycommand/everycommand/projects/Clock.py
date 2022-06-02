@@ -26,7 +26,9 @@ def counter():
     #calculates remaining time \/
     while 1:
         now = time.time()
+        #note: 1893452400 is the year 2030 in seconds EXACTLY
         seconds = 1893452400 - now
+        #after 2030, this code will be invalid
         minutes = seconds//60
         seconds = seconds - (minutes * 60)
         hours = minutes//60
