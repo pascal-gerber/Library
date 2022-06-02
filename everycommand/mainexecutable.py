@@ -6,7 +6,7 @@ import sys
 import csv
 import getpass
 import pathlib
-import threading
+import threading #used for future uses
 import webbrowser
 
 ################################################################################################################
@@ -155,7 +155,7 @@ def buildpath(filename, difficulty):
     elif sys.platform == "linux":
         droppedFile = pathlib.Path(__file__).parent.resolve()
         lines = "/"
-    if droppedFile[:-12] != "everycommand":
+    if droppedFile[-12:] != "everycommand":
         droppedFile += "\\everycommand"
     if difficulty == "easy":
         pathtofiles += "easy" + lines + filename
@@ -213,12 +213,15 @@ def openpython(path):
                         pass
                 if exists == False:
                     information = Tk()
-                    Label(information, text="Choose the Idle.bat file to start files over the path")
+                    InfoText = Label(information, text="Choose the Idle.bat\n(python executer)\nfile to start the program over the\nmanually set path")
+                    Infotext.configure(font = ("Lucida Console", 16))
+                    InfoText.grid()
                     filename = filedialog.askopenfilename(initialdir = "/",
                                                           title = "Idle.bat",
                                                           filetypes = (("Text files", "*.bat*"), ("all files","*.*")))
                     exists = True
                     subprocess.call([filename, path])
+                    information.geometry("400x100")
                     information.mainloop()
 
         

@@ -39,11 +39,17 @@ drinksNpeoples.update({"Jessica": "beer"})
 print(drinksNpeoples, "new added peoples")
 
 
+#you can transform a list into a Dictionnary using
+#these 2 lines
+
+hobbys = ["Jack", "Football", "Joe", "Tennis", "Mike", "Skiing"]
+
+#              \/  here goes the list
+itter = iter(hobbys)
+hobbyDict = dict(zip(itter, itter))
 
 
-
-
-
+print(hobbyDict, "\n    /\\which was a list before/\\")
 
 
 

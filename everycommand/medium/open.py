@@ -3,31 +3,42 @@
 #first the file name and also the mode to open it.
 
 #####################################################################
-#Theres
+#In the File edit options there are :
+
 #"w" = Write - will overwrite anything with the new content
+
 #"r" = Read - will read the file if variable has .read()
+
 #"a" = Append - will add new content as addition
+
 #"wb" = Write binary - will write content into other types
        #of files like .exe and other in binary
+
 #"ab" = Append binary - will append the content into
        #files as binary
+
 #"rb" = Read binary - will read the special files binary
        #always used before anything binary
+
 #"w+" = Write + Read - Overwrites the file but is also able
        #to read it.
+
 #"r+" = Read + Write - Will append to the beginning new content
        #and can read the file
+
 #"a+" = Append + Read - Will append text and read.
 
 #"wb+" = Write binary + read binary \
+
 #"rb+" = Read binary + write binary /
+
 #"ab+" = Append binary + read binary
 #######################################################################
 
 #############################################################
-#writting will always create a new file if non existing.
-#reading will cause issues if not exisiting
-#append will create new files if not existing
+#writting will always create a new file if non existing.    #
+#reading will cause issues if not exisiting                 #
+#append will create new files if not existing               #
 #############################################################
 
 
