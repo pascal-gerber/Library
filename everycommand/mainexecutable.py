@@ -24,7 +24,7 @@ hardstages = ["Encapsulation.py", "Inheritance.py", "init.py", "Compare.py"]
 modulestages = ["Modules.py","Timemodule.py", "Turtle.py",  "osmodule.py", "Tkinter part1.py", "Tkinter part2.py",
                 "Tkinter part3.py", "Tkinter part4.py", "Sys.py", "Auto-py-to-exe.py", "Specific download.py", "Flask.py"]
 
-projectstages = ["turtlestar.py", "goatgame.py", "Clock.py", "toDoList.py", "multitabbrowser.py"]
+projectstages = ["turtlestar.py", "goatgame.py", "Clock.py", "toDoList.py", "multitabbrowser.py", "Encoder.py", "minesweeper.py"]
 
 bonusstages = ["Lists.py", "Editing files.py", "Folder informations.py"]
 
@@ -42,7 +42,7 @@ hardtitles = ["Encapsulation\nPrivate class", "Inheritance", "__init__\nFunction
 moduletitles = ["Download\nModules","Time Module", "Basic Turtle", "OS Module", "Gui Part 1", "Gui Part 2",
                 "Gui Part 3", "Gui Part 4", "System - Sys", "EXE File Conversion", "Not working\nmodules", "Flask\nfor Websites"]
 
-projecttitles = ["Turtle Star", "Goat Game", "Clock To 2030", "To Do List", "Multi Tab Browser"]
+projecttitles = ["Turtle Star", "Goat Game", "Clock To 2030", "To Do List", "Multi Tab Browser", "Encoder", "Minesweeper"]
 
 bonustitles = ["Lists", "File Manipulation", "Folder Research"]
 ################################################################################################################
@@ -64,11 +64,11 @@ difficulties = ["easy", "medium", "hard", "modules", "projects", "Bonus codes"]
 ObjList = []
 filename = ""
 
-#Txt File Reader
-def readFile(pathandname):
+#Txt File Reader for TKinter.
+def readFile(path, name):
     reader = Tk()
 
-    contentOfFile = open(pathandname, "r")
+    contentOfFile = open(path + "\\" + name, "r")
     fileText = contentOfFile.read()
     contentOfFile.close()
 
@@ -77,7 +77,8 @@ def readFile(pathandname):
     contentContainer.grid()
     
     contentContainer.configure(state=DISABLED)
-    
+
+    reader.title(name)
     reader.geometry("500x500")
     reader.mainloop()
     
@@ -162,6 +163,10 @@ def android(pathfile):
 
 openname = ""
 
+##########################################################################################################
+#                                           End Of function                                              #
+##########################################################################################################
+
 #this selects files from the library
 def buildpath(filename, difficulty):
     global openname
@@ -195,8 +200,9 @@ def buildpath(filename, difficulty):
     elif sys.platform == "linux":
         android(pathtofiles)
 
-##################################################################################################################
-##################################################################################################################
+##########################################################################################################
+#                                           End Of function                                              #
+##########################################################################################################
 
 #this opens the requested file with the python program.
 def openpython(path):
@@ -242,6 +248,9 @@ def openpython(path):
                     information.geometry("400x100")
                     information.mainloop()
 
+##########################################################################################################
+#                                           End Of function                                              #
+##########################################################################################################
         
 
 def number(num, difficulty):
@@ -270,6 +279,11 @@ def number(num, difficulty):
         ########################################Bonus codes#####################################################
     elif difficulty == "Bonus codes":
         buildpath(bonusstages[num], "Bonus codes")
+
+##########################################################################################################
+#                                           End Of function                                              #
+##########################################################################################################
+
         
 def destroyLabel():
     global ObjList
@@ -476,8 +490,12 @@ For  variables, classes and functions it is best to use camelCase."""
 
 def openPath(place):
     if place == "readMe":
-        filePath = (str(pathlib.Path(__file__).parent.resolve()) + "\\File-projects\\IMG to Transparent\\Description.txt")
-        readFile(filePath)
+        firstPathStep = str(pathlib.Path(__file__).parent.resolve())
+        if "everycommand" not in firstPathStep:
+            firstPathStep += "everycommand"
+                            
+        filePath = firstPathStep + "\\File-projects"
+        readFile(filePath, "Description.txt")
     elif place == "transparent":
         desiredPath = (str(pathlib.Path(__file__).parent.resolve()) + "\\File-projects\\IMG to Transparent\\Input")
         subprocess.Popen(r'explorer /select,' + desiredPath)
@@ -562,6 +580,10 @@ Good Luck to you """ + str(getpass.getuser())
     Support.title("Support communities")
     Support.configure(bg="LimeGreen")
     Support.mainloop()
+    
+##########################################################################################################
+#                                           End Of function                                              #
+##########################################################################################################
 
 #_________________________________OOP and Procedural______________________________________________________
 ##########################################################################################################
@@ -574,6 +596,11 @@ def createShowWindow():
     Process.title("OOP and Procedural")
     Process.geometry("500x500")
     Process.mainloop()
+
+
+##########################################################################################################
+#                                           End Of function                                              #
+##########################################################################################################
 
     
 #_________________________________Tutorial for regex______________________________________________________
@@ -629,7 +656,9 @@ def regexSetup():
 
 
 ##########################################################################################################
-    
+#                                           End Of function                                              #
+##########################################################################################################
+
 def openLink(link):
     webbrowser.open_new(link)
 ##########################################################################################################
@@ -638,6 +667,9 @@ def showpyhton():
     if sys.platform == "win32" or sys.platform == "win64":
         droppedFile = os.getcwd()
         lines = "\\"
+        if "everycommand" not in droppedFile:
+            droppedFile += "\\everycommand"
+        
     elif sys.platform == "linux":
         droppedFile = pathlib.Path(__file__).parent.resolve()
         lines = "/"
@@ -648,6 +680,11 @@ def showpyhton():
         openpython(pathtofiles)
     elif sys.platform == "linux":
         android(pathtofiles)
+
+##########################################################################################################
+#                                           End Of function                                              #
+##########################################################################################################
+
 
 #__________________________________Pages___________________________________________________________________
 ###########################################################################################################
