@@ -499,6 +499,9 @@ def openPath(place):
     elif place == "transparent":
         desiredPath = (str(pathlib.Path(__file__).parent.resolve()) + "\\File-projects\\IMG to Transparent\\Input")
         subprocess.Popen(r'explorer /select,' + desiredPath)
+    elif place == "bookReader":
+        desiredPath = (str(pathlib.Path(__file__).parent.resolve()) + "\\File-projects\\BookReader\\bookreader.py")
+        subprocess.Popen(r'explorer /select,' + desiredPath)
 
 
 def dataBasedFilePage():
@@ -517,6 +520,11 @@ there will be mostly file based programms that need a specific file/save outside
     transparentImages = Button(showData, text="Image\nTransparent", command=lambda :openPath("transparent"),
                          height=10, width=15, bg="Purple")
     transparentImages.grid(row=3, column=1)
+
+    bookReader = Button(showData, text="Book\nReader", command=lambda :openPath("bookReader"),
+                         height=10, width=15, bg="Purple")
+    bookReader.grid(row=3, column=2)
+    
 
     
 
