@@ -1,0 +1,12 @@
+The file "Bookreader" will be reading books in the specific format of Docx.
+you can add many DOCX files to the folder to read them all using this code.
+
+Note: Images arn't implemented yet if they ever will be...
+
+
+the module installer will install the required module.
+
+there will possibly be updates if needed.
+
+Made by Pascal
+Enjoy!
