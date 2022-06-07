@@ -2,6 +2,7 @@ from tkinter import * #GUI
 import docx2txt #docx reading
 import os #for searching all files
 import pathlib #for getting actual file path
+import math #for the squareroot
 
 #lists and changable content
 file = ""
@@ -52,8 +53,11 @@ def createBook():
 
     forwardButton = Button(window, text="=>", command=lambda Swipe = Swipe: Swipe("Forward"), width = 10, height = 8)
     forwardButton.grid(row = 10, column = 10)
-    
-    contentContainer = Text(window, width = 100, height = 60)
+
+    #wierd height calculation that should adapt the height of the widget to screen.
+    winheight = math.sqrt(window.winfo_screenheight()) - (window.winfo_screenheight()/1000)
+
+    contentContainer = Text(window, width = window.winfo_screenwidth()//20, height = winheight)
     contentContainer.grid(row = 3, column = 0, columnspan = 11)
 
     
