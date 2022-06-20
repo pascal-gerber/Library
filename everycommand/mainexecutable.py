@@ -176,9 +176,9 @@ def buildpath(filename, difficulty):
         droppedFile = os.getcwd()
         lines = "\\"
     elif sys.platform == "linux":
-        droppedFile = pathlib.Path(__file__).parent.resolve()
+        droppedFile = str(pathlib.Path(__file__).parent.resolve())
         lines = "/"
-    if droppedFile[-12:] != "everycommand":
+    if "everycommand" not in droppedFile:
         droppedFile += "\\everycommand"
     if difficulty == "easy":
         pathtofiles += "easy" + lines + filename
