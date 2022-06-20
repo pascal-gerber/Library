@@ -545,13 +545,9 @@ def reinstall():
     global clicked
     global About
     if clicked == True:
-        browser
+        webbrowser.open_new("https://github.com/pascal-gerber/Library/archive/refs/heads/main.zip")
     clicked = True
-    About.configure(text="you need to reinstall\nmy programm?", command=reinstallProgramm)
-
-def reinstallProgramm():
-    webbrowser.open_new("https://github.com/pascal-gerber/Library/archive/refs/heads/main.zip")
-    
+    About.configure(text="you need to reinstall\nmy programm?")  
 
 def Supportpage():
     global About
