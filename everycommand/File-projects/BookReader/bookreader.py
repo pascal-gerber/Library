@@ -3,6 +3,7 @@ import docx2txt #docx reading
 import os #for searching all files
 import pathlib #for getting actual file path
 import math #for the squareroot
+import natsort #for sorting from 1 to 10
 
 #lists and changable content
 file = ""
@@ -19,6 +20,7 @@ contentContainer = None
 def addPagesToBook(fileName):
     global window
     global allPageContent
+    fileName = natsort.natsorted(fileName)
     for each in fileName:
         try:
             result = docx2txt.process(each)
@@ -32,13 +34,13 @@ def Swipe(direction):
     
     if direction == "Back":
         currentPage -= 1
-        if currentPage == 0:
+        if currentPage == -1:
             currentPage = len(allPageContent) -1
     elif direction == "Forward":
         currentPage += 1
         if currentPage == len(allPageContent):
             currentPage = 0
-            
+
     changePageContent(allPageContent[currentPage])
 
 
@@ -46,6 +48,7 @@ def Swipe(direction):
 def createBook():
     global window
     global contentContainer
+    global files
     window = Tk()
 
     backButton = Button(window, text="<=", command=lambda Swipe = Swipe: Swipe("Back"), width = 10, height = 8)
@@ -60,6 +63,7 @@ def createBook():
     contentContainer = Text(window, width = window.winfo_screenwidth()//20, height = winheight)
     contentContainer.grid(row = 3, column = 0, columnspan = 11)
 
+    currentPage = 0
     
     #for deciding the behaviour/content of the page by the amount of DOCX files
     if len(allPageContent) == 1:

@@ -19,7 +19,7 @@ easystages = ["Print.py", "variables1.py", "variables2.py", "variables3.py", "Va
 
 mediumstages = ["classes.py", "StringManipulation.py", "open.py", "CSV.py", "Dictionnaries.py"]
 
-hardstages = ["Encapsulation.py", "Inheritance.py", "init.py", "Compare.py"]
+hardstages = ["Encapsulation.py", "Inheritance.py", "init.py", "Compare.py", "args Kwargs.py"]
 
 modulestages = ["Modules.py","Timemodule.py", "Turtle.py",  "osmodule.py", "Tkinter part1.py", "Tkinter part2.py",
                 "Tkinter part3.py", "Tkinter part4.py", "Sys.py", "Auto-py-to-exe.py", "Specific download.py", "Flask.py"]
@@ -37,7 +37,7 @@ easytitles = ["Print Explaination", "Datatypes", "Grouped Data", "Conversion of\
 
 mediumtitles = ["Classes", "String manipulation", "Edit files", "CSV Files\nExcel", "Dictionnaries"]
 
-hardtitles = ["Encapsulation\nPrivate class", "Inheritance", "__init__\nFunction", "Compare Objects"]
+hardtitles = ["Encapsulation\nPrivate class", "Inheritance", "__init__\nFunction", "Compare Objects", "*args\n**kwargs"]
 
 moduletitles = ["Download\nModules","Time Module", "Basic Turtle", "OS Module", "Gui Part 1", "Gui Part 2",
                 "Gui Part 3", "Gui Part 4", "System - Sys", "EXE File Conversion", "Not working\nmodules", "Flask\nfor Websites"]
