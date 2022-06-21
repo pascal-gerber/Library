@@ -10,9 +10,10 @@ import sys
 # main window
 class MainWindow(QMainWindow):
 
-	# constructor
-    def __init__(window, *fuckme, **kiddingme):
-        super(MainWindow, window).__init__(*fuckme, **kiddingme)
+    #will get executed at the start with a tuple any size of 0
+    #and a dictionnary with the size of 0 "to be added"
+    def __init__(window, *tupleParameter, **dictionnaryParameter):
+        super(MainWindow, window).__init__(*tupleParameter, **dictionnaryParameter)
         window.tabs = QTabWidget()
         
 		# making document mode true
