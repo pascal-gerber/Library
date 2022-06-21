@@ -44,8 +44,8 @@ class kiwi(pigeon):
     Fly = False
     
 #the changed properties
-print(kiwi.Fly)
-print(kiwi.Food)
+print(kiwi.Fly, "can a kiwi fly")
+print(kiwi.Food, "what does a kiwi eat")
 
 "print(kiwi.private())"
 
