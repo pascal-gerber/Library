@@ -1,3 +1,4 @@
+#Credits for this file bottom
 #in python there is *args and **kwargs
 
 #youv'e probably seen them
@@ -10,7 +11,6 @@
 #but we can change the name of args and kwargs.
 #example:
 
-
 #now you can try removing the star
                  #\/ this small sign
 def addAllTogheter(*wholeCalcStuff):
@@ -22,42 +22,40 @@ def addAllTogheter(*wholeCalcStuff):
 
 print(addAllTogheter(5, 6, 8, 9, 10, 23))
 
-#args takes smaller variable values example "integers, strings, floats and booleans"
+#args takes variable values unordered example
+# ["hello world", 4, 4.6, True, ["List", "too"], ("tuples", "and many more") ]
+#args = arguments
 
-#kwargs takes bigger like dictionnaries with "keywords" or simply comparasons
-
-def sayAllOut(**dictionnary):
-    for first, second in dictionnary.items():
-        print(first, "contains " + second)
-
-        #  \/           \/          \/ same syntax as variables
-sayAllOut(a = "hi", b = "hello", c = "yo")
+#kwargs takes specified variables example
+# [String = "hello world", Integer = 5, Float = 3.2, List = [1, 2], Tuple = (1, 2) ]
+#kwargs = Key word Arguments
 
 
-#__________________________________________________________________________
+#----------------------------------------------------
 
-#a arg and kwarg can be also used litterally in the other way too
+def Arguments(firstArgument, secondArgument):
+    print(firstArgument + secondArgument)
 
-def takeThreeValue(one, two, three):
-    return(one + " then " + two + " then " + three)
+                # \/  \/ those are in a logical order
+normalArguments = 43, 23
 
-
-whatsIn = "this", "that", "this here"
-print(takeThreeValue(*whatsIn))
-
-
-#___________________________________________________________________________
+Arguments(*normalArguments)
 
 
-#it also works by both settings.
-def takeThreeValue(*allOfEm):
-    for each in allOfEm:
-        print(each, " another")
 
 
-allValues = 3, 5, 10, 23, 35, 54
-print(takeThreeValue(*allValues))
+def KeyWordArguments(normalInput, **keywords):
+    #its a wierd way to write it, but its how it works
+    print(keywords["secondArgument"] + keywords["firstArgument"])
 
+
+KeyWordArguments(normalInput = 21, secondArgument = 32, firstArgument = 21)
+
+
+#----------------------------------------------------
+
+#made by Pascal
+#taught by David
 
 #Thanks David for the help
 #check him out :
