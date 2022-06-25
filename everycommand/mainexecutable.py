@@ -22,7 +22,8 @@ mediumstages = ["classes.py", "StringManipulation.py", "open.py", "CSV.py", "Dic
 hardstages = ["Encapsulation.py", "Inheritance.py", "init.py", "Compare.py", "args Kwargs.py"]
 
 modulestages = ["Modules.py","Timemodule.py", "Turtle.py",  "osmodule.py", "Tkinter part1.py", "Tkinter part2.py",
-                "Tkinter part3.py", "Tkinter part4.py", "Sys.py", "Auto-py-to-exe.py", "Specific download.py", "Flask.py"]
+                "Tkinter part3.py", "Tkinter part4.py", "Sys.py", "Auto-py-to-exe.py", "Specific download.py", "Flask.py",
+                "async.py"]
 
 projectstages = ["turtlestar.py", "goatgame.py", "Clock.py", "toDoList.py", "multitabbrowser.py", "Encoder.py", "minesweeper.py"]
 
@@ -40,7 +41,8 @@ mediumtitles = ["Classes", "String manipulation", "Edit files", "CSV Files\nExce
 hardtitles = ["Encapsulation\nPrivate class", "Inheritance", "__init__\nFunction", "Compare Objects", "*args\n**kwargs"]
 
 moduletitles = ["Download\nModules","Time Module", "Basic Turtle", "OS Module", "Gui Part 1", "Gui Part 2",
-                "Gui Part 3", "Gui Part 4", "System - Sys", "EXE File Conversion", "Not working\nmodules", "Flask\nfor Websites"]
+                "Gui Part 3", "Gui Part 4", "System - Sys", "EXE File Conversion", "Not working\nmodules",
+                "Flask\nfor Websites", "Asyncio"]
 
 projecttitles = ["Turtle Star", "Goat Game", "Clock To 2030", "To Do List", "Multi Tab Browser", "Encoder", "Minesweeper"]
 

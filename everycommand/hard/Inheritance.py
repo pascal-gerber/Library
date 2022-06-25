@@ -34,7 +34,7 @@ firstExample.printmessage()
 class pigeon():
     Fly = True
     Food = "Breadcrums"
-    #private settings don't work since theyr'e made to be private
+    #private settings don't work since they're made to be private
     __Secret = "im secret"
     def private():
         print(__Secret)
