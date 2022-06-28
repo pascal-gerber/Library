@@ -504,6 +504,9 @@ def openPath(place):
     elif place == "bookReader":
         desiredPath = (str(pathlib.Path(__file__).parent.resolve()) + "\\File-projects\\BookReader\\bookreader.py")
         subprocess.Popen(r'explorer /select,' + desiredPath)
+    elif place == "Jason":
+        desiredPath = (str(pathlib.Path(__file__).parent.resolve()) + "\\File-projects\\Json\\Jason.py")
+        subprocess.Popen(r'explorer /select,' + desiredPath)
 
 
 def dataBasedFilePage():
@@ -526,6 +529,10 @@ there will be mostly file based programms that need a specific file/save outside
     bookReader = Button(showData, text="Book\nReader", command=lambda :openPath("bookReader"),
                          height=10, width=15, bg="Purple")
     bookReader.grid(row=3, column=2)
+
+    jsonFile = Button(showData, text="json files", command=lambda :openPath("Jason"),
+                         height=10, width=15, bg="Purple")
+    jsonFile.grid(row=3, column=3)
     
 
     
