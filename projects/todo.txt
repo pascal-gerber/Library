@@ -1,4 +1,0 @@
-Korrigieren der namen
-list slicing
-OOP und Prozedurales
-Access modifiers
