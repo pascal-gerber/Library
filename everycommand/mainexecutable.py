@@ -317,7 +317,7 @@ def easySetup():
     for easystages in range(len(titles)):
         easy = Button(window, text=titles[easystages], bg=easycol[1],
                       command=lambda number = number, easystages = easystages:number(easystages, "easy"),
-                      height = 5, width = 15)
+                      height = 5, width = 15, wraplength=233)
         easy.grid(row = (int(easystages//4)) + 2, column = easystages - (easystages//4)*4)
         ObjList.append(easy)
 #_______________________________________Medium_____________________________________________________
@@ -515,16 +515,16 @@ there will be mostly file based programms that need a specific file/save outside
     Information.grid(row=2, column=1, columnspan=4)
     
     readMeButton = Button(showData, text="Read Me", command=lambda :openPath("readMe"),
-                         height=10, width=15, bg="Purple")
+                         height=10, width=15, wraplength=9, bg="Purple")
     readMeButton.grid(row=3, column=0)
     
 
     transparentImages = Button(showData, text="Image\nTransparent", command=lambda :openPath("transparent"),
-                         height=10, width=15, bg="Purple")
+                         height=10, width=15, wraplength=9, bg="Purple")
     transparentImages.grid(row=3, column=1)
 
     bookReader = Button(showData, text="Book\nReader", command=lambda :openPath("bookReader"),
-                         height=10, width=15, bg="Purple")
+                         height=10, width=15, wraplength=9, bg="Purple")
     bookReader.grid(row=3, column=2)
     
 
@@ -562,19 +562,19 @@ Good Luck to you """ + str(getpass.getuser())
     Information = Label(Support, text=supportHelp, bg="LimeGreen")
     Information.grid(row=2, column=1, columnspan=4)
     FirstSupport = Button(Support, text="Discord", command=lambda openLink = openLink:openLink("https://discord.com/invite/python"),
-                         height=10, width=15, bg="Lime")
+                         height=10, width=15, wraplength=9, bg="Lime")
     FirstSupport.grid(row=3, column=1)
     SecondSupport = Button(Support, text="Stack Overflow", command=lambda openLink = openLink:openLink("https://stackoverflow.com/questions/ask"),
-                         height=10, width=15, bg="Lime")
+                         height=10, width=15, wraplength=9, bg="Lime")
     SecondSupport.grid(row=3, column=2)
     ThirtSupport = Button(Support, text="Reddit", command=lambda openLink = openLink:openLink("https://www.reddit.com/r/Python/submit"),
-                         height=10, width=15, bg="Lime")
+                         height=10, width=15, wraplength=9, bg="Lime")
     ThirtSupport.grid(row=3, column=3)
     FourthSupport = Button(Support, text="Python Discuss", command=lambda openLink = openLink:openLink("https://discuss.python.org/top?period=monthly"),
-                         height=10, width=15, bg="Lime")
+                         height=10, width=15, wraplength=9, bg="Lime")
     FourthSupport.grid(row=3, column=3)
     About = Button(Support, text="Programm issue", command=reinstall,
-                   height=10, width=15, bg="Lime")
+                   height=10, width=15, wraplength=9, bg="Lime")
     About.grid(row=3, column=4)
    
 
@@ -637,19 +637,19 @@ def regexSetup():
     cheatSet.grid(row=2, column=1, columnspan=4)
 
     FirstRegex = Button(Regex, text="regex101", command=lambda openLink = openLink:openLink("https://regex101.com/"),
-                        height=10, width=15, bg="Moccasin")
+                        height=10, width=15, wraplength=9, bg="Moccasin")
     FirstRegex.grid(row=3, column=1)
     SecondRegex = Button(Regex, text="regexr", command=lambda openLink = openLink:openLink("https://regexr.com/"),
-                         height=10, width=15, bg="Moccasin")
+                         height=10, width=15, wraplength=9, bg="Moccasin")
     SecondRegex.grid(row=3, column=2)
     cheatsheet = Button(Regex, text="Cheatsheet 1", command=lambda openLink = openLink:openLink("https://medium.com/factory-mind/regex-cookbook-most-wanted-regex-aa721558c3c1"),
-                        height=10, width=15, bg="Moccasin")
+                        height=10, width=15, wraplength=9, bg="Moccasin")
     cheatsheet.grid(row=3, column=3)
     secondCheat = Button(Regex, text="Cheatsheet 2", command=lambda openLink = openLink:openLink("https://www3.ntu.edu.sg/home/ehchua/programming/howto/Regexe.html"),
-                         height=10, width=15, bg="Moccasin")
+                         height=10, width=15, wraplength=9, bg="Moccasin")
     secondCheat.grid(row=3, column=4)
     pythonRegex = Button(Regex, text="python", command=showpyhton,
-                         height=10, width=15, bg="Moccasin")
+                         height=10, width=15, wraplength=9, bg="Moccasin")
     pythonRegex.grid(row=3, column=5) 
 
     Regex.configure(bg="BurlyWood")
@@ -750,7 +750,14 @@ def createinterface():
     easySetup()
     difficultyswitch()
     window.title("python library")
-    window.geometry("500x600")
+    window.geometry("1000x1600")
+    window.resizable(0, 0)
+    window.columnconfigure(0, weight=10)
+    window.columnconfigure(1, weight=10)
+    window.columnconfigure(2, weight=11)
+    window.columnconfigure(3, weight=7)
+    window.columnconfigure(4, weight=9)
+    window.columnconfigure(5, weight=10)
     window.mainloop()
             
 createinterface()
