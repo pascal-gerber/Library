@@ -12,10 +12,6 @@ _#Note: it also works for pydroid on android._
 Everything is available from the github the link is:
 [Available here](https://github.com/pascal-gerber/Library/archive/refs/heads/main.zip)
 
-or the file is stored:
-[Here](https://github.com/pascal-gerber/Library)
-
-
 ## have fun :D
 
 ##### everything was made by : Pascal
